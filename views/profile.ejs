@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          
+            <h2>Add a post</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  
+                  <input type="text" class="form-control" id="coffee" name="name" placeholder="Order Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="checkbox"  id="hot" name="temp" value="hot"></input>
+                <label for="hot" class="form-label">Hot</label>
+              </div>
+              <div class="mb-3">
+                <input type="checkbox"  id="iced" name="temp" value="iced">
+                <label for="iced" class="form-label">Iced</label>
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+       
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

@@ -1,0 +1,49 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      
+        <h2>Pending Orders</h2>
+        <% for(var i=0; i < pending.length; i++) { %>
+          <ul>
+          <li class="col-6 justify-content-between mt-5">
+            <h3><%= pending[i].name %></h3>
+              <h4><%= pending[i].temp %></h4>
+              
+             
+          </ul>
+            <form
+        action="/post/completeOrder/<%= pending[i].id %>?_method=PUT"
+        method="POST"
+        class="col-3"
+      ><button type="submit">Complete</button>
+      
+</form> 
+          </li>
+        <% } %>
+
+
+        <% for(var i=0; i < completed.length; i++) { %>
+          <ul>
+          <li class="col-6 justify-content-between mt-5">
+            <h3><%= completed[i].barista %></h3>
+            <h3><%= completed[i].name %></h3>
+              <h4><%= completed[i].temp %></h4>
+              
+             
+          </ul>
+          
+          <form
+          action="/post/deletePost/<%= completed[i].id %>?_method=DELETE"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        </form>
+ 
+          </li>
+        <% } %>
+        
+      
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
